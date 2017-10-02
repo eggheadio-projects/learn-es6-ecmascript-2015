@@ -29,13 +29,24 @@ var people = [
   }
 ]
 
-people.forEach(({firstName}) => console.log(firstName))
+people.forEach(({firstName}) => console.log(firstName) || displayInPreview(firstName))
 
 
 var [,Skyler] = people;
 
 function logEmail({email}){
-  console.log(email);
+  console.log(email) || displayInPreview(email);
 }
 
 logEmail(Skyler);
+
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}

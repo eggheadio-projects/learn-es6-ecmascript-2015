@@ -18,11 +18,11 @@ myMap.set(myObj, 'bar');
 myMap.set(myFunc, 'world');
 myMap.set('string', 2);
 
-console.log('get on myMap = ' + myMap.get(myObj));
+console.log('get on myMap = ' + myMap.get(myObj)) || displayInPreview('get on myMap = ' + myMap.get(myObj));
 
 //myMap.clear();
 
-console.log('has on non-existing key = ' + myMap.has('qwerty'));
+console.log('has on non-existing key = ' + myMap.has('qwerty')) || displayInPreview('has on non-existing key = ' + myMap.has('qwerty'));
 
 //Iterators
 //keys()
@@ -30,7 +30,7 @@ console.log('has on non-existing key = ' + myMap.has('qwerty'));
 //values
 
 for(var [key, value] of myMap.entries()){
-  console.log(key + ' = ' + value);
+  console.log(key + ' = ' + value) || displayInPreview(key + ' = ' + value);
 }
 
 //WeakMap Restrictions
@@ -50,4 +50,14 @@ var myFunc2 = function(){};
 myMap.set(myObj2, 'bar');
 myMap.set(myFunc2, 'world');
 
-console.log(myMap.get(myObj));
+console.log(myMap.get(myObj)) || displayInPreview(myMap.get(myObj));
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}

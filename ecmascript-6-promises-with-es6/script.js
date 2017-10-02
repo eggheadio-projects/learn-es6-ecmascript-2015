@@ -12,10 +12,20 @@ var d = new Promise((resolve, reject) => {
 });
 
 d.then((data) => {
-    console.log('success : ', data);
+    console.log('success : ', data) || displayInPreview('success : ', data);
     return 'foo bar';
   }).
   then((data) => {
-    console.log('success 2 : ', data);
+    console.log('success 2 : ', data) || displayInPreview('success 2 : ', data);
   }).
-  catch((error) => console.error('error : ', error));
+  catch((error) => console.error('error : ', error)) || displayInPreview('error : ', error);
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}

@@ -9,7 +9,7 @@ function varFunc(){
     previous = current;
     current = temp + current;
   }
-  console.log(current);
+  console.log(current) || displayInPreview(current);
 }
 
 function letFunc(){
@@ -22,8 +22,18 @@ function letFunc(){
     current = temp + current;
   }
   
-  console.log(current);
+  console.log(current) || displayInPreview(current);
 }
 
 varFunc();
 letFunc();
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}

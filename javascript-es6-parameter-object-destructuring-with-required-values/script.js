@@ -7,7 +7,7 @@ function ajax({
   success = requiredParameter("success"),
   error = () => {},
   isAsync = true } = {}) {
-	console.log(JSON.stringify({ type, url, data, success, error, isAsync }, null, 2));
+	console.log(JSON.stringify({ type, url, data, success, error, isAsync }, null, 2)) || displayInPreview(JSON.stringify({ type, url, data, success, error, isAsync }, null, 2));
 }
 
 function requiredParameter(name) {
@@ -19,4 +19,14 @@ try {
 		url: "https://my.api.io",
 		success: () => {}
 	});
-} catch (e) { console.warn(e.message) }
+} catch (e) { console.warn(e.message) || displayInPreview(e.message) }
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}
