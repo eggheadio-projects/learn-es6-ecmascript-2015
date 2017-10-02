@@ -1,7 +1,7 @@
 // const is a constant reference
 const VALUE = {};
 VALUE.foo = 'bar';
-console.log('value: ', VALUE) || displayInPreview('value: ', VALUE);
+console.log('value: ', VALUE) || displayInPreview('value: ', VALUE.foo);
 
 
 // const adheres to block scope
