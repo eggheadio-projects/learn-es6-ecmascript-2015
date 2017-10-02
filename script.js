@@ -17,9 +17,9 @@ console.log('foo: ', foo) || displayInPreview('foo: ', foo);
 
 
 // display in plunker preview
-function displayInPreview(string) {
+function displayInPreview(string, value) {
   var newDiv = document.createElement("div"); 
-  var newContent = document.createTextNode(string); 
+  var newContent = document.createTextNode(`${string} ${value}`);   
   newDiv.appendChild(newContent);
   document.body.appendChild(newDiv)
 }
