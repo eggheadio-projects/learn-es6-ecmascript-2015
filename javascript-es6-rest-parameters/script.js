@@ -21,7 +21,7 @@ function Store() {
 var myGroceryStore = new Store();
 
 myGroceryStore.add('fruit', 'apples', 'oranges');
-console.log(myGroceryStore.aisle) || displayInPreview(myGroceryStore.aisle);
+console.log(myGroceryStore.aisle) || displayInPreview(myGroceryStore.aisle.fruit);
 
 
 
